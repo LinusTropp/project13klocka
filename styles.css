@@ -1,0 +1,90 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+}
+.klocka {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(110, 110, 110, 0.947);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 12px double rgb(0, 0, 0);
+  box-shadow: 0px 0px 5px 10px rgb(255, 255, 255);
+  position: relative;
+}
+.dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 0 2px 5px black;
+}
+.second {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 2px;
+  width: 150px;
+  transform-origin: 0 0;
+  background-color: rgb(95, 19, 238);
+  border-radius: 20px;
+  box-shadow: 0 0 5px 5px rgb(95, 19, 238);
+  animation-name: secondtick;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+.minute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 2px;
+  width: 100px;
+  background-color: rgba(255, 0, 0, 0.863);
+  border-radius: 20px;
+  box-shadow: 0 0 5px 5px rgb(255, 0, 0);
+  animation-name: minutetick;
+  animation-iteration-count: infinite;
+  animation-duration: 60s;
+  transform-origin: 0 0;
+  animation-timing-function: linear;
+}
+@media (max-width: 600px) {
+  body {
+    padding: 10%;
+  }
+  .klocka {
+    width: 200px;
+    height: 200px;
+  }
+  .minute {
+    width: 40%;
+  }
+  .second {
+    width: 50%;
+  }
+}
+
+@keyframes secondtick {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes minutetick {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
